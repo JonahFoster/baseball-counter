@@ -1,25 +1,35 @@
+let pitchEl = document.getElementById("pitch-el")
 let ballEl = document.getElementById("ball-el")
 let strikeEl = document.getElementById("strike-el")
 let saveEl = document.getElementById("save-el")
+let pitchCount = 0
 let ballCount = 0
 let strikeCount = 0
 let hitCount = 0
 
+function pitch() {
+    pitchCount +=1
+    pitchEl.textContent = "Pitch Count: " + pitchCount
+}
+
 function ball() {
     ballCount += 1
     ballEl.textContent = ballCount
+    pitch()
     atBatResult()
 }
 
 function strike() {
     strikeCount += 1
     strikeEl.textContent = strikeCount
+    pitch()
     atBatResult()
 }
 
 function hit() {
     hitCount += 1
     atBatResult()
+    pitch()
 }
 
 function saveResult() {
