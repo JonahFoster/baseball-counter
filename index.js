@@ -4,12 +4,14 @@ let strikeEl = document.getElementById("strike-el")
 let saveEl = document.getElementById("save-el")
 let walkEl = document.getElementById("walk-el")
 let strikeOutEl = document.getElementById("strikeout-el")
+let hitsEl = document.getElementById("hits-el")
 let pitchCount = 0
 let ballCount = 0
 let strikeCount = 0
 let hitCount = 0
 let walkCount = 0
 let strikeOutCount = 0
+let hitsCount = 0
 
 function pitch() {
     pitchCount +=1
@@ -58,6 +60,8 @@ function atBatResult() {
         saveResult()
     }
     else if (hitCount == 1) {
+        hitsCount += 1
+        hitsEl.textContent = "Hits: " + hitsCount
         saveResult()
     }
 }
